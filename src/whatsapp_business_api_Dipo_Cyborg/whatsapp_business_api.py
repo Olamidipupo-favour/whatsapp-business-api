@@ -33,8 +33,9 @@ class WhatsAppBusinessAPI:
         response = requests.post(url, data=data, headers=headers)
         status_code = response.status_code
         data = response.json()
+        print(data)
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_text_message_with_url(self, phone_number=None, message=None, url=None, context_id=None):
@@ -70,7 +71,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_media_message(self, phone_number=None, document_url=None, caption=None, type="image", context_id=None):
@@ -105,7 +106,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_location_message(self, phone_number=None, latitude=None, longitude=None, name=None, address=None, context_id=None):
@@ -137,7 +138,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_contact_message(self, phone_number=None, contacts=[], context_id=None):
@@ -226,7 +227,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_template_message(self, phone_number=None, template_name=None, language_code="en_GB", header_image=None, context_id=None):
@@ -282,7 +283,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_interactive_template(self, phone_number=None, template_name=None, language_code="en_GB", header_image=None, context_id=None):
@@ -346,7 +347,7 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
 
     def send_interactive_template_message(self, phone_number=None, template_name=None, language_code="en_GB", header_image=None, context_id=None, btns={}):
@@ -416,5 +417,5 @@ class WhatsAppBusinessAPI:
         status_code = response.status_code
         data = response.json()
         data = {"status_code": status_code, "data": data,
-                "to": data.contacts[0].input, "to_id": data.contacts[0].wa_id, "message_id": data.messages[0].id}
+                "to": data['contacts'][0]['input'], "to_id": data['contacts'][0]['wa_id'], "message_id": data['messages'][0]['id']}
         return data
